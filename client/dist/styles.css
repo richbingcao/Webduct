@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+}
+
+.title {
+  background: #0e88b1;
+}
+
+.movie-list {
+  margin: 75px 160px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.table {
+  margin: auto;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#header {
+  font-size: 32px;
+  padding-bottom: 10px;
+}
+
+.row {
+  padding: 100px 100px;
+  background-color: blue;
+  text-align: center;
+  float: right;
+}
