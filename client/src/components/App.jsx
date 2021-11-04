@@ -49,8 +49,8 @@ const tableIcons = {
 const GET_ORDERS = gql`
   query {
     orders(
-      dateStart: "2021-07-01T00:00:00.000Z"
-      dateEnd: "2021-07-31T07:59:59.999Z"
+      dateStart: "2021-10-01T00:00:00.000Z"
+      dateEnd: "2021-10-31T07:59:59.999Z"
       dateType: "delivery"
     ) {
       index
@@ -111,8 +111,8 @@ const GET_ORDERS = gql`
       }
     }
     timecards(
-      dateStart: "2021-07-01T07:00:00.000Z"
-      dateEnd: "2021-07-31T07:00:00.000Z"
+      dateStart: "2021-10-01T07:00:00.000Z"
+      dateEnd: "2021-10-31T07:00:00.000Z"
       dateType: "delivery"
     ) {
       id
@@ -447,7 +447,7 @@ function App() {
   return (
     <div style={{ maxWidth: "70%" }}>
       <MaterialTable
-        title="Rolling Shop Productivity 7/2021"
+        title="Rolling Shop Productivity 10/2021"
         icons={tableIcons}
         options={{
           exportAllData: true,

@@ -11,7 +11,7 @@ import {
 
 const client = new ApolloClient({
   link: new HttpLink({
-    uri: "https://api.webduct.com/public/graphql?access_token=f23ed1aba696a541b99240da9bdebff432176d2e",
+    uri: "https://api.webduct.com/public/graphql?access_token=d6569c24ccf1de0b0a38968ab54c82257d77447d",
   }),
   cache: new InMemoryCache(),
 });
