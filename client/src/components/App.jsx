@@ -20,6 +20,7 @@ import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
 import { makeStyles } from "@material-ui/core";
 
+// Icons for the displayed table
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
@@ -43,9 +44,10 @@ const tableIcons = {
   ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
 };
-// dateStart: "2021-01-01T00:00:00.000Z", dateEnd: "2021-02-15T00:00:00.000Z" 2021-04-13T07:59:59.999Z
-// let dateStart = "2021-04-01T00:00:00.000Z";
-// let dateEnd = "2021-05-01T07:59:59.999Z";
+
+// Parameters to change in orders and timecards:
+// dateStart
+// dateEnd
 const GET_ORDERS = gql`
   query {
     orders(
@@ -136,6 +138,7 @@ const GET_ORDERS = gql`
   }
 `;
 
+// This function grabs numbers from a single order (for debugging purposes).
 const GET_ORDER = gql`
   query {
     orders(orderIndex: 8982) {
@@ -197,16 +200,22 @@ const GET_ORDER = gql`
   }
 `;
 
+// This is a helper function that rounds number with no decimals.
 function roundToTwo(num) {
   return +(Math.round(num + "e+2") + "e-2");
 }
 
+// This is a helper function that inserts commas into high digit numbers.
+// Ex: 10000 -> 10,000
 function separator(numb) {
   var str = numb.toString().split(".");
   str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return str.join(".");
 }
 
+/*
+map is a hashtable data structure that holds all of the data
+*/
 let map = {
   1: {
     fg: "Cut",
@@ -401,7 +410,6 @@ function App() {
       roundedPoundPerHour = 0;
     }
 
-    // console.log("typeof" ,typeof index)
     if (index === "20101" || index === "25341") {
       // console.log("adding weight to 2nd totals")
       totalWeight2 += roundedWeight;
@@ -426,8 +434,6 @@ function App() {
     }
   }
 
-  // console.log(totalLabor2, totalWeight2)
-
   fgArray.push({
     fg: "TOTAL",
     weight: separator(Math.round(totalWeight)),
@@ -444,6 +450,8 @@ function App() {
     poundPerHour: separator(Math.round(totalWeight2 / totalLabor2)),
   });
   console.log(fgArray);
+
+  // Change the title here to show the month number
   return (
     <div style={{ maxWidth: "70%" }}>
       <MaterialTable
