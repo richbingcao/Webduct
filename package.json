@@ -1,7 +1,7 @@
 {
   "name": "WebDuct",
   "version": "1.0.0",
-  "description": "A great way to practice react and express!",
+  "description": "Webduct Productivity Report",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/electricpen/movie_list.git"
+    "url": "https://github.com/richbingcao/Webduct"
   },
   "keywords": [],
   "author": "Richard Cao",
