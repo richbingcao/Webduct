@@ -361,7 +361,7 @@ function App() {
         map[7].shopLabour += roundToTwo(minutes / 60);
       } else if (code === 20401 || code === 20402 || code === 20403) {
         map[9].shopLabour += roundToTwo(minutes / 60);
-        console.log("anything here!?");
+        // console.log("anything here!?");
       } else if (code === 20231 || code === 20241 || code === 20404) {
         map[11].shopLabour += roundToTwo(minutes / 60);
       } else {
@@ -377,9 +377,9 @@ function App() {
       }
     }
   }
-  console.log(map[9]);
-  console.log(map[3]);
-  console.log("TOTAL TIME: ", totalTime);
+  // console.log(map[9]);
+  // console.log(map[3]);
+  // console.log("TOTAL TIME: ", totalTime);
 
   map[6].weight += map[1].weight;
   map[7].weight += map[10].weight;
@@ -388,7 +388,7 @@ function App() {
   delete map[3];
   delete map[10];
 
-  console.log(map);
+  // console.log(map);
 
   let fgArray = [];
   let fgArray2 = [];
@@ -449,7 +449,7 @@ function App() {
     shopLabour: separator(Math.round(totalLabor2)),
     poundPerHour: separator(Math.round(totalWeight2 / totalLabor2)),
   });
-  console.log(fgArray);
+  // console.log(fgArray);
 
   // Change the title here to show the month number
   return (
